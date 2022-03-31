@@ -5,7 +5,6 @@ function App() {
   return (
     <div className="App">
       <Globalstyles />
-      {/* <h1>Hello React</h1> */}
       <Contact />
     </div>
   );
