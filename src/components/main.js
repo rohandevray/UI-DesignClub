@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import car from "../images/lo.svg";
+import insta from "../images/insta.svg";
+import linkedin from "../images/linkedin.svg";
+import link from "../images/website.svg";
+import location from "../images/location.svg";
+import mail from "../images/mail.svg";
+
 function Contact() {
   return (
     <Card>
@@ -11,10 +17,35 @@ function Contact() {
           get back to you <br /> as soon as possible.
         </p>
         <div className="icons">
-          <h1>Nitk racing</h1>
-          <h2>nitk adress </h2>
-          <h2>nitk contact </h2>
-          <p>Links of intsa ,clg website, linkedib</p>
+          <h2>Get in touch.</h2>
+          <Block>
+            <Left>
+              <img src={location} alt="" />
+              <img src={mail} alt="" id="mail" />
+            </Left>
+            <Right>
+              <p>
+                National Institute of Technology Karnataka, NH 66, Srinivas
+                Nagar, Surathkal, Mangaluru, Karnataka 575025
+              </p>
+              <p>nitkracing@edu.in</p>
+            </Right>
+          </Block>
+
+          <div className="media">
+            <a href="https://www.instagram.com/nitkracing/">
+              <img src={insta} alt="" id="one" />
+            </a>
+            <br />
+            <a href="https://www.linkedin.com/company/nitkracing/mycompany/">
+              <img src={linkedin} alt="" id="two" />
+            </a>
+            <br />
+            <a href="https://twitter.com/nitkracing?lang=en">
+              <img src={link} alt="" id="three" />
+            </a>
+            <br />
+          </div>
         </div>
       </Content>
       <img src={car} alt="" />
@@ -29,8 +60,8 @@ function Contact() {
           <p>Preffered method of communication</p> <br />
           <MidZ>
             <MidX>
-              <input type="checkbox" name="check" id="specs" />
-              <label for="check">Phone</label>
+              <input type="checkbox" name="phone" id="specs" />
+              <label for="phone">Phone</label>
             </MidX>
             <MidY>
               <input type="checkbox" name="mess" id="specs" />
@@ -70,7 +101,29 @@ const MidY = styled.div`
 const MidZ = styled.div`
   display: flex;
 `;
-
+const Left = styled.div`
+  display: inline-block;
+  img {
+    margin-bottom: 1rem;
+    display: block;
+  }
+  #mail {
+    margin-top: 3.7rem;
+  }
+`;
+const Right = styled.div`
+  display: block;
+  p {
+    position: relative;
+    left: 8%;
+    top: 10%;
+  }
+`;
+const Block = styled.div`
+  display: flex;
+  position: relative;
+  top: -0.5rem;
+`;
 const Content = styled.div`
   width: 30%;
   height: 80vh;
@@ -91,7 +144,39 @@ const Content = styled.div`
   }
   .icons {
     position: relative;
-    top: 50%;
+    top: 36%;
+    z-index: 100;
+    p {
+      opacity: 0.75;
+    }
+    img {
+      width: 2.1rem;
+      height: 2rem;
+      position: relative;
+      opacity: 0.75;
+    }
+    h2 {
+      color: #a7a4a4;
+      font-size: 1.9rem;
+      font-weight: bold;
+    }
+
+    #one {
+      margin-left: 0;
+    }
+    .media {
+      display: flex;
+      img {
+        margin-top: 1.2rem;
+        margin-left: 1.6rem;
+      }
+      a {
+        display: inline;
+        z-index: 1000;
+        position: relative;
+        left: 2%;
+      }
+    }
   }
 `;
 const Submit = styled.div`
@@ -112,14 +197,18 @@ const Submit = styled.div`
     border-right: none;
     border-top: none;
     outline: none;
-    border-width: 1.8px;
+    border-width: 1.9px;
     border-color: grey;
     &::placeholder {
       font-size: 0.95rem;
     }
+    &:focus {
+      border-color: #e35bd1;
+    }
     color: grey;
     font-weight: 500;
   }
+
   p {
     padding-top: 4%;
 
@@ -172,6 +261,14 @@ const Submit = styled.div`
     font-size: 1.1rem;
     letter-spacing: 0.5px;
     cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover {
+      background-color: #d431b4;
+      letter-spacing: 1px;
+    }
+    &:focus {
+      transform: scale(0.95);
+    }
   }
   @media (max-width: 768px) {
     left: 5.6%;
