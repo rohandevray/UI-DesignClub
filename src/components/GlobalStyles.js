@@ -8,9 +8,27 @@ const Globalstyles = createGlobalStyle`
     }
     body{
         font-family: 'Montserrat', sans-serif;
-        background: linear-gradient(160deg, #254fd4 70%, white 30%);
         overflow: hidden;
+        background: linear-gradient(160deg, #000000 100%, white 30%);
+        
     }
+    @media (max-width:768px) {
+        
+        #carr{
+            position: absolute;
+            width: 90%;
+            bottom: 10%;
+        }
+       
+    }
+    @media (max-width:840px) {
+        #carr{
+            position: absolute;
+            width: 90%;
+            bottom: 10%;
+        }
+    }
+  
    
 `;
 
